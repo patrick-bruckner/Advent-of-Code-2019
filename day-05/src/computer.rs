@@ -310,7 +310,7 @@ impl Computer
             panic!("Malformed program - Input opcode too short");
         }
 
-        let destination_address = self.memory[self.instruction_pointer + 3];
+        let destination_address = self.memory[self.instruction_pointer + 1];
 
         if destination_address < 0
         {
@@ -342,7 +342,7 @@ impl Computer
             panic!("Malformed program - Input opcode too short");
         }
 
-        let output   = self.get_param_value(pm, self.instruction_pointer + 1);
+        let output = self.get_param_value(pm, self.instruction_pointer + 1);
 
         println!("{}", output);
 
